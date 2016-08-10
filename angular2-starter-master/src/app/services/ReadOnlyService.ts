@@ -31,7 +31,6 @@ export class ReadOnlyServiceBase<TOut>
     }
 
     /* Protected methods */
-
     protected getAllItemsInternal(hostUrl: string): Observable<TOut[]> {
         return this.http.get(hostUrl + this.baseUrl, { headers: this.getJsonHeaders })
             .map(r => this.mapItems(r.json()));

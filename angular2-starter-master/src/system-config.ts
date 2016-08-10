@@ -60,6 +60,12 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/test-material',
+  'app/test1',
+  'app/test2',
+  'app/computer-details',
+  'app/computer-list',
+  'app/welcome-page',
+  'app/data',
   /** @cli-barrel */
 ];
 

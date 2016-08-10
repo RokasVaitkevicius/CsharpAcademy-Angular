@@ -5,7 +5,11 @@ import {provideForms, disableDeprecatedForms} from '@angular/forms';
 
 import {AppComponent, environment} from './app/';
 
-import {DummyComputerDetailsService} from './app/services/ComputerDetails/ComputerDetailsFacadeService';
+import {ComputerDetailsService} from './app/services/ComputerDetails/ComputerDetailsService';
+import {UsageDataServiceFactory} from './app/services/ComputerDetails/UsageDataServiceFactory';
+
+
+import {APP_ROUTER_PROVIDERS} from './app/app.routes';
 
 if (environment.production) {
   enableProdMode();
@@ -13,8 +17,10 @@ if (environment.production) {
 
 bootstrap(AppComponent, 
   [
-    HTTP_PROVIDERS,
-    DummyComputerDetailsService, 
+    HTTP_PROVIDERS, 
+    APP_ROUTER_PROVIDERS,
+    ComputerDetailsService,
+    UsageDataServiceFactory,
     disableDeprecatedForms(), 
     provideForms()
     ]);
